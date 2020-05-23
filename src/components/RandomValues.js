@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'react-materialize';
+import {FormattedMessage} from 'react-intl';
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
 
@@ -30,18 +31,18 @@ class RandomValues extends Component {
     return (
       <div>
         <p>
-          Uma revista publicou os valores que uma determinada cidade registrou 
-          ao meio-dia ao longo de 30 dias. Para visualizar os resultados, clique
-          no botão abaixo.
+          <FormattedMessage id='randomValues.header' />
         </p>
 
-        <Button onClick={this.generateValues}>Visualizar</Button>
+        <Button onClick={this.generateValues}>
+          <FormattedMessage id='randomValues.show' />
+        </Button>
 
         {this.state.numbers &&
           <span>
             <p>{this.state.numbers.join(', ')}</p>
             <Button id="sortBtn" onClick={this.sort}>
-              Ordenar
+              <FormattedMessage id='randomValues.sort' />
             </Button>
           </span>
         }
