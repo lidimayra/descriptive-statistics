@@ -19,11 +19,11 @@ class NumbersGenerator extends Component {
       <span>
         <div className="section">
           <p>
-            <FormattedMessage id='randomValues.header' />
+            <FormattedMessage id='numbersGenerators.header' />
           </p>
 
           <Button onClick={this.generateValues}>
-            <FormattedMessage id='randomValues.show' />
+            <FormattedMessage id='numbersGenerators.show' />
           </Button>
         </div>
       </span>

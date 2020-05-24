@@ -1,7 +1,8 @@
 {
+  "numbersGenerators.header": "Uma revista publicou os valores correspondentes a temperatura que uma determinada cidade registrou ao meio-dia ao longo de 30 dias. Para visualizar os resultados, clique no botão abaixo.",
+  "numbersGenerators.show": "Visualizar",
+  "randomValues.header": "Os valores de temperatura observados ao meio-dia ao longo dos últimos 30 dias podem ser conferidos abaixo.",
   "randomValues.title": "Distribuição de Frequências",
-  "randomValues.header": "Uma revista publicou os valores que uma determinada cidade registrou ao meio-dia ao longo de 30 dias. Para visualizar os resultados, clique no botão abaixo.",
   "randomValues.results": "Resultados",
-  "randomValues.show": "Visualizar",
   "randomValues.sort": "Ordenar"
 }
