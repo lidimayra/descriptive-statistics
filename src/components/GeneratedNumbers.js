@@ -6,10 +6,15 @@ class GeneratedNumbers extends Component {
     super(props);
 
     this.sort = this.sort.bind(this);
+
+    this.state = {
+      sorted: false
+    }
   }
 
   sort() {
     let numbers = this.props.numbers.sort();
+    this.setState({ sorted: true });
     this.props.callbackFromParent(numbers);
   }
 
@@ -27,11 +32,13 @@ class GeneratedNumbers extends Component {
 
             {this.props.numbers.join(', ')}
 
-            <div className="card-action">
-              <a href="#" onClick={this.sort}>
-                <FormattedMessage id='randomValues.sort' />
-              </a>
-            </div>
+            { !this.state.sorted &&
+              <div className="card-action">
+                <a href="#" onClick={this.sort}>
+                  <FormattedMessage id='randomValues.sort' />
+                </a>
+              </div>
+            }
           </div>
         </div>
       </div>

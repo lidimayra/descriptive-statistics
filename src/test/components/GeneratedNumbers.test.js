@@ -12,6 +12,7 @@ test('initial state', () => {
   );
 
   expect(screen.getByText('3, 6, 1, 8')).toBeInTheDocument();
+  expect(screen.getByText('Sort')).toBeInTheDocument();
 });
 
 test('when sorting results', () => {
@@ -26,5 +27,6 @@ test('when sorting results', () => {
   );
 
   fireEvent.click(screen.getByText('Sort'));
+  expect(screen.queryByText('Sort')).not.toBeInTheDocument()
 });
 
