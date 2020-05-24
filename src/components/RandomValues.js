@@ -32,15 +32,11 @@ class RandomValues extends Component {
 
         <div className="divider"></div>
 
-        { !this.state.numbers &&
-          <NumbersGenerator callbackFromParent={this.fetchNumbers}/>
-        }
+        <NumbersGenerator callbackFromParent={this.fetchNumbers}/>
 
-        {this.state.numbers &&
-          <GeneratedNumbers
-            numbers={this.state.numbers}
-            callbackFromParent={this.fetchSortedNumbers}/>
-        }
+        <GeneratedNumbers
+          numbers={this.state.numbers}
+          callbackFromParent={this.fetchSortedNumbers}/>
       </div>
     );
   }

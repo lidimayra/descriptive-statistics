@@ -7,14 +7,23 @@ class NumbersGenerator extends Component {
     super(props);
 
     this.generateValues = this.generateValues.bind(this);
+
+    this.state = {
+      numbers: null
+    }
   }
 
   generateValues() {
     let numbers = Array.from(Array(30), () => Math.floor(Math.random() * 8) + 20);
+    this.setState({ numbers: numbers });
     this.props.callbackFromParent(numbers);
   }
 
   render() {
+    if (this.state.numbers) {
+      return null;
+    }
+
     return (
       <span>
         <div className="section">

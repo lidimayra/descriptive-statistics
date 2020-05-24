@@ -19,6 +19,10 @@ class GeneratedNumbers extends Component {
   }
 
   render() {
+    if(!this.props.numbers) {
+      return null;
+    }
+
     return(
       <div className="section">
         <p>
