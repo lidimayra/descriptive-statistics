@@ -29,22 +29,32 @@ class RandomValues extends Component {
 
   render() {
     return (
-      <div>
-        <p>
-          <FormattedMessage id='randomValues.header' />
-        </p>
+      <div className="container">
+        <div className="row">
+          <h1 className="purple-text text-darken-4 h1">
+            <FormattedMessage id='randomValues.title' />
+          </h1>
+        </div>
 
-        <Button onClick={this.generateValues}>
-          <FormattedMessage id='randomValues.show' />
-        </Button>
+        <div className="divider"></div>
+
+        <div className="section">
+            <p>
+              <FormattedMessage id='randomValues.header' />
+            </p>
+
+            <Button onClick={this.generateValues}>
+              <FormattedMessage id='randomValues.show' />
+            </Button>
+        </div>
 
         {this.state.numbers &&
-          <span>
-            <p>{this.state.numbers.join(', ')}</p>
+          <div className="section">
+            <p className="card-panel purple lighten-5">{this.state.numbers.join(', ')}</p>
             <Button id="sortBtn" onClick={this.sort}>
               <FormattedMessage id='randomValues.sort' />
             </Button>
-          </span>
+          </div>
         }
       </div>
     );

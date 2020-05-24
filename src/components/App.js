@@ -15,9 +15,7 @@ class App extends Component {
   render() {
     return (
       <IntlProvider locale={navigator.language} messages={data[navigator.language]}>
-        <div className="App">
           <RandomValues />
-        </div>
       </IntlProvider>
     );
   }
