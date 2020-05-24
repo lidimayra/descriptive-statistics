@@ -50,10 +50,21 @@ class RandomValues extends Component {
 
         {this.state.numbers &&
           <div className="section">
-            <p className="card-panel purple lighten-5">{this.state.numbers.join(', ')}</p>
-            <Button id="sortBtn" onClick={this.sort}>
-              <FormattedMessage id='randomValues.sort' />
-            </Button>
+            <div className="card blue-grey darken-1 z-depth-3">
+              <div className="card-content white-text">
+                <span className="card-title">
+                  <FormattedMessage id='randomValues.results' />
+                </span>
+
+                {this.state.numbers.join(', ')}
+
+                <div className="card-action">
+                  <a href="#" onClick={this.sort}>
+                    <FormattedMessage id='randomValues.sort' />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         }
       </div>
