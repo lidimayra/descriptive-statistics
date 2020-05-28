@@ -18,13 +18,3 @@ test('initial state', () => {
   expect(screen.queryByText('Sort')).not.toBeInTheDocument()
 });
 
-
-test('when generating random values', () => {
-  // 30 2-digit numbers separated by a comma
-  const randomNumbersPattern = /(\d{2}, ){29}\d{2}/;
-
-  fireEvent.click(screen.getByText('Show'));
-
-  expect(screen.getByText('Sort')).toBeVisible();
-  expect(screen.getByText(randomNumbersPattern)).toBeInTheDocument();
-});

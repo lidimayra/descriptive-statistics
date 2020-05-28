@@ -11,7 +11,6 @@ test('initial state', () => {
     </IntlProvider>
   );
 
-  expect(screen.getByText('3, 6, 1, 8')).toBeInTheDocument();
   expect(screen.getByText('Sort')).toBeInTheDocument();
 });
 

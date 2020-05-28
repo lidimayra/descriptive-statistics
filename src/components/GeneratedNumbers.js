@@ -6,6 +6,7 @@ class GeneratedNumbers extends Component {
     super(props);
 
     this.sort = this.sort.bind(this);
+    this.displayNumbers = this.displayNumbers.bind(this);
 
     this.state = {
       sorted: false
@@ -16,6 +17,12 @@ class GeneratedNumbers extends Component {
     let numbers = this.props.numbers.sort();
     this.setState({ sorted: true });
     this.props.callbackFromParent(numbers);
+  }
+
+  displayNumbers() {
+    return this.props.numbers.map((n, index) =>
+      <span key={index} className='number indigo-text text-lighten-4'>{n}</span>
+    );
   }
 
   render() {
@@ -34,7 +41,7 @@ class GeneratedNumbers extends Component {
               <FormattedMessage id='randomValues.results' />
             </span>
 
-            {this.props.numbers.join(', ')}
+            {this.displayNumbers()}
 
             { !this.state.sorted &&
               <div className="card-action">
