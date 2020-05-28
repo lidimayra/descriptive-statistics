@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {FormattedMessage} from 'react-intl';
 import NumbersGenerator from './NumbersGenerator';
 import GeneratedNumbers from './GeneratedNumbers';
+import FrequencyTable from './FrequencyTable';
 
 class RandomValues extends Component {
   constructor(props) {
@@ -37,6 +38,10 @@ class RandomValues extends Component {
         <GeneratedNumbers
           numbers={this.state.numbers}
           callbackFromParent={this.fetchSortedNumbers}/>
+
+        {this.state.sortedNumbers &&
+          <FrequencyTable numbers={this.state.sortedNumbers} />
+        }
       </div>
     );
   }
