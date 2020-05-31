@@ -1,4 +1,6 @@
 {
+  "frequencyTable.analysis": "Analyzing the results above, we can see that:",
+  "frequencyTable.number-occurrences": "Number {xi} appears {fi} times.",
   "numbersGenerators.header": "A magazine published the temperature values that an specific city registered at noon for 30 days in a row. To display the results, click on the button below",
   "numbersGenerators.show": "Show",
   "randomValues.header": "The values that correspond to the temperature that was registered at noon in the last 30 days are listed below.",

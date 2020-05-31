@@ -18,11 +18,7 @@ test('when rendering frequencies', () => {
   ];
 
   frequencies.forEach(([xi, fi]) => {
-    const row = screen.getByText(xi).closest("tr");
-    const utils = within(row);
-
-    expect(utils.getByText(xi)).toBeInTheDocument();
-    expect(utils.getByText(fi)).toBeInTheDocument();
+    expect(screen.getByRole('row', { name: `${xi} ${fi}`})).toBeInTheDocument();
   });
 });
 
