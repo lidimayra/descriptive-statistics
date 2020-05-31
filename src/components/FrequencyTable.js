@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import { Button } from 'react-materialize';
+import M from "materialize-css";
 
 class FrequencyTable extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class FrequencyTable extends Component {
     this.displayText = this.displayText.bind(this);
     this.displayTable = this.displayTable.bind(this);
     this.displayFrequencies = this.displayFrequencies.bind(this);
+    this.help = this.help.bind(this);
     this.state = {
       frequencyCount: null,
       display: false
@@ -17,6 +19,12 @@ class FrequencyTable extends Component {
 
   componentDidMount() {
     this.setState({ frequencyCount: Array.from(this.calculate()) });
+  }
+
+  componentDidUpdate() {
+    if (this.state.display) {
+      M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
+    }
   }
 
   calculate() {
@@ -49,10 +57,23 @@ class FrequencyTable extends Component {
     );
   }
 
+  help(intl, topic) {
+    return(
+      <span className="tooltipped purple-text text-darken-1"
+        data-position="bottom"
+        data-tooltip={intl.formatMessage({id: `frequencyTable.help.${topic}`})}>
+          {topic}&nbsp;
+        <i className="tiny material-icons">help</i>
+      </span>);
+  }
+
   render() {
     if (!this.state.frequencyCount) {
       return null
     }
+
+    const { intl } = this.props;
+
     return(
       <div className="row">
         <div className="col s6">
@@ -72,18 +93,18 @@ class FrequencyTable extends Component {
         </div>
 
        { this.state.display &&
-          <div className="col s6">
-              <table className='striped'>
-                <thead>
-                  <tr>
-                    <th>xi</th>
-                    <th>fi</th>
-                  </tr>
-                </thead>
+         <div className="col s6">
+           <table className='striped'>
+             <thead>
+               <tr>
+                 <th>{this.help(intl, 'xi')}</th>
+                 <th>{this.help(intl, 'fi')}</th>
+               </tr>
+             </thead>
                 <tbody>
                   {this.displayFrequencies()}
                 </tbody>
-              </table>
+           </table>
           </div>
        }
       </div>
@@ -91,4 +112,4 @@ class FrequencyTable extends Component {
   }
 }
 
-export default FrequencyTable;
+export default injectIntl(FrequencyTable);
