@@ -17,6 +17,8 @@ test('when rendering frequencies', () => {
     ['42', '3']
   ];
 
+  screen.getByRole('button').click();
+
   frequencies.forEach(([xi, fi]) => {
     expect(screen.getByRole('row', { name: `${xi} ${fi}`})).toBeInTheDocument();
   });

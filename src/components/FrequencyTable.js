@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import {FormattedMessage} from 'react-intl';
+import { Button } from 'react-materialize';
 
 class FrequencyTable extends Component {
   constructor(props) {
     super(props);
 
     this.displayText = this.displayText.bind(this);
+    this.displayTable = this.displayTable.bind(this);
     this.displayFrequencies = this.displayFrequencies.bind(this);
-    this.state = { frequencyCount: null };
+    this.state = {
+      frequencyCount: null,
+      display: false
+    };
   }
 
   componentDidMount() {
@@ -19,6 +24,10 @@ class FrequencyTable extends Component {
       (acc, xi) => { acc.set(xi, (acc.get(xi) || 0) + 1); return acc },
       new Map()
     );
+  }
+
+  displayTable() {
+    this.setState({ display: true });
   }
 
   displayText() {
@@ -48,22 +57,35 @@ class FrequencyTable extends Component {
       <div className="row">
         <div className="col s6">
           <p><FormattedMessage id='frequencyTable.analysis' /></p>
-            {this.displayText()}
+
+          {this.displayText()}
+
+          <p>
+            <FormattedMessage id='frequencyTable.frequencyDistribution' />
+          </p>
+
+          { !this.state.display &&
+            <Button onClick={this.displayTable}>
+              <FormattedMessage id='frequencyTable.showInTable' />
+            </Button>
+          }
         </div>
 
-        <div className="col s6">
-            <table className='striped'>
-              <thead>
-                <tr>
-                  <th>xi</th>
-                  <th>fi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.displayFrequencies()}
-              </tbody>
-            </table>
-        </div>
+       { this.state.display &&
+          <div className="col s6">
+              <table className='striped'>
+                <thead>
+                  <tr>
+                    <th>xi</th>
+                    <th>fi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.displayFrequencies()}
+                </tbody>
+              </table>
+          </div>
+       }
       </div>
     );
   }

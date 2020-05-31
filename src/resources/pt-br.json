@@ -1,6 +1,8 @@
 {
   "frequencyTable.analysis": "Analisando os resultados acima, podemos perceber que:",
+  "frequencyTable.frequencyDistribution": "Ao organizar os valores conforme a frequência em que ocorrem, montamos a Distribuição de Frequência. Para facilitar a sua visualização, podemos usar uma tabela.",
   "frequencyTable.number-occurrences": "O número {xi} aparece {fi} vezes.",
+  "frequencyTable.showInTable": "Mostrar na tabela",
   "numbersGenerators.header": "Uma revista publicou os valores correspondentes a temperatura que uma determinada cidade registrou ao meio-dia ao longo de 30 dias. Para visualizar os resultados, clique no botão abaixo.",
   "numbersGenerators.show": "Visualizar",
   "randomValues.header": "Os valores de temperatura observados ao meio-dia ao longo dos últimos 30 dias podem ser conferidos abaixo.",
