@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Button } from 'react-materialize';
 import M from "materialize-css";
+import 'katex/dist/katex.min.css';
+import { InlineMath } from 'react-katex';
 
 class FrequencyTable extends Component {
   constructor(props) {
@@ -57,12 +59,12 @@ class FrequencyTable extends Component {
     );
   }
 
-  help(intl, topic) {
+  help(intl, topic, notation) {
     return(
       <span className="tooltipped purple-text text-darken-1"
         data-position="bottom"
         data-tooltip={intl.formatMessage({id: `frequencyTable.help.${topic}`})}>
-          {topic}&nbsp;
+        <InlineMath math={notation}/>&nbsp;
         <i className="tiny material-icons">help</i>
       </span>);
   }
@@ -97,8 +99,8 @@ class FrequencyTable extends Component {
            <table className='striped'>
              <thead>
                <tr>
-                 <th>{this.help(intl, 'xi')}</th>
-                 <th>{this.help(intl, 'fi')}</th>
+                 <th>{this.help(intl, 'xi', 'x_{i}')}</th>
+                 <th>{this.help(intl, 'fi', 'f_{i}')}</th>
                </tr>
              </thead>
                 <tbody>
