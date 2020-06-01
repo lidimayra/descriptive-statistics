@@ -1,7 +1,7 @@
 {
   "frequencyTable.analysis": "Analisando os resultados acima, podemos perceber que:",
   "frequencyTable.frequencyDistribution": "Ao organizar os valores conforme a frequência em que ocorrem, montamos a Distribuição de Frequência. Para facilitar a sua visualização, podemos usar uma tabela.",
-  "frequencyTable.help.fi": "Número de ocorrências de cada valor",
+  "frequencyTable.help.fi": "A frequência individual: Representa o número de ocorrências de cada valor",
   "frequencyTable.help.xi": "Valores encontrados na amostra",
   "frequencyTable.number-occurrences": "O número {xi} aparece {fi} vezes.",
   "frequencyTable.showInTable": "Mostrar na tabela",

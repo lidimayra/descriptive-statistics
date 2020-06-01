@@ -20,7 +20,7 @@ xtest('when rendering frequencies', () => {
   screen.getByRole('button').click();
 
   frequencies.forEach(([xi, fi]) => {
-    // TODO: Make it work. This test is not working anymore after addition on
+    // TODO: Make it work. This test is not working anymore after addition of
     // InlineMath component in FrequencyTable.js
     expect(screen.getByRole('row', { name: `${xi} ${fi}`})).toBeInTheDocument();
   });

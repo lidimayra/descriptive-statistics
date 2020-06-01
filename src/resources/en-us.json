@@ -1,7 +1,7 @@
 {
   "frequencyTable.analysis": "Analyzing the results above, we can see that:",
   "frequencyTable.frequencyDistribution": "When organizing values according to the number of times they occur, we represented the Frequency Distribution. In order to facilitate the visualization, we can use a table.",
-  "frequencyTable.help.fi": "Number of times each value occurred",
+  "frequencyTable.help.fi": "Absolute frequency: the number of times each value occurred",
   "frequencyTable.help.xi": "Values that were found in the sample",
   "frequencyTable.number-occurrences": "Number {xi} appears {fi} times.",
   "frequencyTable.showInTable": "Show in table",
