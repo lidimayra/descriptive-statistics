@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import M from "materialize-css";
 import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
@@ -21,6 +21,7 @@ class FrequencyTable extends Component {
       <tr key={xi}>
         <td>{xi}</td>
         <td>{fi}</td>
+        {this.props.children}
       </tr>
     );
   }
