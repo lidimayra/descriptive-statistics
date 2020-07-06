@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import M from "materialize-css";
 import 'katex/dist/katex.min.css';
 import { InlineMath } from 'react-katex';
@@ -10,17 +10,22 @@ class FrequencyTable extends Component {
 
     this.displayFrequencies = this.displayFrequencies.bind(this);
     this.help = this.help.bind(this);
+    this.columns = this.columns.bind(this);
   }
 
   componentDidMount() {
     M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
   }
 
+  columns(index) {
+    return <td>{this.props.data.fi[index]}</td>;
+  }
+
   displayFrequencies() {
     return this.props.data.xi.map((xi, index) => {
       return <tr key={xi}>
                <td>{xi}</td>
-               <td>{this.props.data.fi[index]}</td>
+               {this.columns(index)}
              </tr>;
     });
   }

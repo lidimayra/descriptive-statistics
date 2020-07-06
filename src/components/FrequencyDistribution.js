@@ -55,8 +55,6 @@ class FrequencyDistribution extends Component {
       return null
     }
 
-    const { intl } = this.props;
-
     return(
       <div className="row">
         <div className="col s6">

@@ -3,6 +3,7 @@ import {FormattedMessage} from 'react-intl';
 import NumbersGenerator from './NumbersGenerator';
 import GeneratedNumbers from './GeneratedNumbers';
 import FrequencyDistribution from './FrequencyDistribution';
+import CumulativeFrequencyTable from './CumulativeFrequencyTable'
 
 class RandomValues extends Component {
   constructor(props) {
@@ -49,6 +50,10 @@ class RandomValues extends Component {
               numbers={this.state.sortedNumbers}
               callbackFromParent={this.fetchFrequencyData}/>
           </span>
+        }
+
+        {this.state.frequencyData &&
+          <CumulativeFrequencyTable data={this.state.frequencyData}/>
         }
       </div>
     );
