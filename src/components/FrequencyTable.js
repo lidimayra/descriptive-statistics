@@ -42,7 +42,7 @@ class FrequencyTable extends Component {
     return(
       <table className='striped'>
         <thead>
-          <tr>
+          <tr alt='Frequency Table Header'>
             <th>{this.help(intl, 'xi', 'x_{i}')}</th>
             <th>{this.help(intl, 'fi', 'f_{i}')}</th>
           </tr>

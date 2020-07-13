@@ -1,28 +1,21 @@
 import React from 'react';
 import {IntlProvider} from "react-intl";
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import FrequencyDistribution from '../../components/FrequencyDistribution';
 import locale_en_us from '../../resources/en-us.json'
 
-xtest('when rendering frequencies', () => {
+test('when rendering frequencies', () => {
+  let frequencyCount;
+
   render(
     <IntlProvider locale='en' messages={locale_en_us}>
-      <FrequencyDistribution numbers={[5, 5, 21, 42, 42, 42]} />
+      <FrequencyDistribution
+        numbers={[5, 5, 21, 42, 42, 42]}
+        callbackFromParent={jest.fn(f => frequencyCount = f)}/>
     </IntlProvider>
   );
 
-  const frequencies = [
-    ['5', '2'],
-    ['21', '1'],
-    ['42', '3']
-  ];
-
   screen.getByRole('button').click();
-
-  frequencies.forEach(([xi, fi]) => {
-    // TODO: Make it work. This test is not working anymore after addition of
-    // InlineMath component in FrequencyDistribution.js
-    expect(screen.getByRole('row', { name: `${xi} ${fi}`})).toBeInTheDocument();
-  });
+  expect(frequencyCount).toEqual([[5, 2], [21, 1], [42, 3]]);
 });
 
