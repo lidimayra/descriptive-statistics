@@ -29,6 +29,7 @@ class FrequencyDistribution extends Component {
 
   displayTable() {
     this.setState({ display: true });
+    this.props.callbackFromParent(this.state.frequencyCount);
   }
 
   displayText() {

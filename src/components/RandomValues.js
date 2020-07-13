@@ -22,6 +22,10 @@ class RandomValues extends Component {
     this.setState({ sortedNumbers: numbers });
   }
 
+  fetchFrequencyCount = (frequencyCount) => {
+    this.setState({ frequencyCount: frequencyCount });
+  }
+
   render() {
     return (
       <div className="container">
