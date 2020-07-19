@@ -17,12 +17,12 @@ class FrequencyTable extends Component {
   }
 
   displayFrequencies() {
-    return this.props.frequencyCount.map(([xi, fi]) =>
-      <tr key={xi}>
-        <td>{xi}</td>
-        <td>{fi}</td>
-      </tr>
-    );
+    return this.props.data.xi.map((xi, index) => {
+      return <tr key={xi}>
+               <td>{xi}</td>
+               <td>{this.props.data.fi[index]}</td>
+             </tr>;
+    });
   }
 
   help(intl, topic, notation) {

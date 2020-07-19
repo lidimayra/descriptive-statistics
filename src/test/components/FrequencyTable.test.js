@@ -8,7 +8,8 @@ test('when rendering table', () => {
   render(
     <IntlProvider locale='en' messages={locale_en_us}>
       <FrequencyTable
-        frequencyCount={[[5, 2], [21, 1], [42, 3]]} />
+        frequencyCount={[[5, 2], [21, 1], [42, 3]]}
+        data={ {'xi': [5, 21, 42], 'fi': [2, 1, 3]} }/>
     </IntlProvider>
   );
 

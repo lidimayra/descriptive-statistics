@@ -10,14 +10,19 @@ class FrequencyDistribution extends Component {
     this.displayText = this.displayText.bind(this);
     this.displayTable = this.displayTable.bind(this);
     this.state = {
-      frequencyCount: null,
-      display: false
+      display: false,
+      data: null
     };
   }
 
   componentDidMount() {
-    const frequencyCount = Array.from(this.calculate());
-    this.setState({ frequencyCount: frequencyCount });
+    const map = { 'xi': [], 'fi': [] };
+    Array.from(this.calculate()).forEach((arr) => {
+      map.xi.push(arr[0]);
+      map.fi.push(arr[1]);
+    });
+
+    this.setState({ data: map });
   }
 
   calculate() {
@@ -29,31 +34,24 @@ class FrequencyDistribution extends Component {
 
   displayTable() {
     this.setState({ display: true });
-    this.props.callbackFromParent(this.state.frequencyCount);
+    this.props.callbackFromParent(this.state.data);
   }
 
   displayText() {
-    return this.state.frequencyCount.map(([xi, fi]) =>
+    return this.state.data.xi.map((xi, index) =>
       <p key={xi}>
         <FormattedMessage
           id='frequencyTable.number-occurrences'
-          values={{ xi: <strong>{xi}</strong>, fi: <strong>{fi}</strong> }}/>
+          values={
+            { xi: <strong>{xi}</strong>,
+              fi: <strong>{this.state.data.fi[index]}</strong> }
+          }/>
       </p>
     );
   }
 
-  displayFrequencies() {
-    return this.state.frequencyCount.map(([xi, fi]) =>
-      <tr key={xi}>
-        <td>{xi}</td>
-        <td>{fi}</td>
-        {this.props.children}
-      </tr>
-    );
-  }
-
   render() {
-    if (!this.state.frequencyCount) {
+    if (!this.state.data) {
       return null
     }
 
@@ -79,7 +77,7 @@ class FrequencyDistribution extends Component {
 
        { this.state.display &&
         <div className="col s6">
-          <FrequencyTable frequencyCount={this.state.frequencyCount}/>
+          <FrequencyTable data={this.state.data}/>
         </div>
        }
       </div>

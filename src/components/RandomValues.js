@@ -22,8 +22,8 @@ class RandomValues extends Component {
     this.setState({ sortedNumbers: numbers });
   }
 
-  fetchFrequencyCount = (frequencyCount) => {
-    this.setState({ frequencyCount: frequencyCount });
+  fetchFrequencyData = (frequencyData) => {
+    this.setState({ frequencyData: frequencyData });
   }
 
   render() {
@@ -47,7 +47,7 @@ class RandomValues extends Component {
           <span>
             <FrequencyDistribution
               numbers={this.state.sortedNumbers}
-              callbackFromParent={this.fetchFrequencyCount}/>
+              callbackFromParent={this.fetchFrequencyData}/>
           </span>
         }
       </div>
