@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import {IntlProvider} from "react-intl";
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
-import locale_en_us from '../resources/en-us.json'
-import locale_pt_br from '../resources/pt-br.json'
+import locale_en_us from '../resources/en_US.json'
+import locale_pt_br from '../resources/pt_BR.json'
 import './App.css';
 
 import RandomValues from './RandomValues';

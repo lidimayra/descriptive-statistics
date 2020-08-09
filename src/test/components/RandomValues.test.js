@@ -2,7 +2,7 @@ import React from 'react';
 import {IntlProvider} from "react-intl";
 import { fireEvent, render, screen } from '@testing-library/react';
 import RandomValues from '../../components/RandomValues';
-import locale_en_us from '../../resources/en-us.json'
+import locale_en_us from '../../resources/en_US.json'
 
 beforeEach(() => {
   render(

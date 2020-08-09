@@ -2,7 +2,7 @@ import React from 'react';
 import {IntlProvider} from "react-intl";
 import { render, screen } from '@testing-library/react';
 import FrequencyTable from '../../components/FrequencyTable';
-import locale_en_us from '../../resources/en-us.json'
+import locale_en_us from '../../resources/en_US.json'
 
 test('when rendering table', () => {
   render(
