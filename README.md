@@ -1,9 +1,9 @@
 [![lidimayra](https://circleci.com/gh/lidimayra/frequencies/tree/master.svg?style=svg)](https://circleci.com/gh/lidimayra/frequencies/tree/master)
 
-# Frequencies Distribution
+# Descriptive Statistics
 
 A ReactJS simple app under construction aimed at basic representations of
-Frequencies Distribution.
+Descriptive Statistics.
 
 ## Setup
 
